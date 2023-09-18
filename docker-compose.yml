@@ -1,0 +1,9 @@
+version: '3'
+services:
+  online-sales-nest:
+    image: postgres
+    container_name: online-sales-nest
+    environment:
+      POSTGRES_PASSWORD: 67586758
+    ports:
+      - "5432:5432"
