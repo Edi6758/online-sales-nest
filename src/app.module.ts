@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -17,8 +18,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       host: process.env.DB_HOST,
       password: process.env.DB_PASSWORD,
       port: Number(process.env.DB_PORT),
-      username: process.env.DB_USERNAME
-    })
+      username: process.env.DB_USERNAME,
+      synchronize: true,
+      entities: [`${__dirname}/**/*.entity{.js,.ts}`]
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
